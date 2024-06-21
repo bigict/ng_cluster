@@ -1,0 +1,122 @@
+{
+  "warnings": [
+    "The following fields in peptide_table were empty and have been removed from the output: cluster.position"
+  ],
+  "errors": [],
+  "results": [
+    {
+      "result_type": "peptide_table",
+      "table_columns": [
+        "cluster.cluster_number",
+        "cluster.peptide_number",
+        "cluster.alignment",
+        "cluster.sequence_number",
+        "cluster.peptide",
+        "cluster.cluster_consensus"
+      ],
+      "table_data": [
+        [
+          "1.1",
+          "Singleton",
+          "LEQIHVLENSLVL",
+          "Mus Pep1",
+          "LEQIHVLENSLVL",
+          "LEQIHVLENSLVL"
+        ],
+        [
+          "2.1",
+          "Singleton",
+          "FVEHIHVLENSLAFK",
+          "Mus Pep2",
+          "FVEHIHVLENSLAFK",
+          "FVEHIHVLENSLAFK"
+        ],
+        [
+          "3.1",
+          "Singleton",
+          "GLYGREPDLSSDIKERFA",
+          "Mus Pep3",
+          "GLYGREPDLSSDIKERFA",
+          "GLYGREPDLSSDIKERFA"
+        ],
+        [
+          "4.1",
+          "Singleton",
+          "EWFSILLASDKREKI",
+          "Mus Pep4",
+          "EWFSILLASDKREKI",
+          "EWFSILLASDKREKI"
+        ]
+      ],
+      "unique_vals": {
+        "cluster.cluster_number": [
+          "1.1",
+          "2.1",
+          "3.1",
+          "4.1"
+        ],
+        "cluster.peptide_number": [
+          "Singleton"
+        ],
+        "cluster.alignment": [
+          "LEQIHVLENSLVL",
+          "FVEHIHVLENSLAFK",
+          "GLYGREPDLSSDIKERFA",
+          "EWFSILLASDKREKI"
+        ],
+        "cluster.sequence_number": [
+          "Mus Pep1",
+          "Mus Pep2",
+          "Mus Pep3",
+          "Mus Pep4"
+        ],
+        "cluster.peptide": [
+          "LEQIHVLENSLVL",
+          "FVEHIHVLENSLAFK",
+          "GLYGREPDLSSDIKERFA",
+          "EWFSILLASDKREKI"
+        ],
+        "cluster.cluster_consensus": [
+          "LEQIHVLENSLVL",
+          "FVEHIHVLENSLAFK",
+          "GLYGREPDLSSDIKERFA",
+          "EWFSILLASDKREKI"
+        ]
+      },
+      "field_ranges": {}
+    },
+    {
+      "graph_data": [
+        {
+          "source": "LEQIHVLENSLVL",
+          "target": "LEQIHVLENSLVL",
+          "cluster": [
+            "1_1"
+          ]
+        },
+        {
+          "source": "FVEHIHVLENSLAFK",
+          "target": "FVEHIHVLENSLAFK",
+          "cluster": [
+            "2_1"
+          ]
+        },
+        {
+          "source": "GLYGREPDLSSDIKERFA",
+          "target": "GLYGREPDLSSDIKERFA",
+          "cluster": [
+            "3_1"
+          ]
+        },
+        {
+          "source": "EWFSILLASDKREKI",
+          "target": "EWFSILLASDKREKI",
+          "cluster": [
+            "4_1"
+          ]
+        }
+      ],
+      "result_type": "network_graph"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+
+
+Basic usage
+
+  python3 src/run_cluster.py -j <input_json_file> [-o] <output_prefix> [-f] <output_format>
+
+ _______________________________________________________________________________________________________________________ 
+| * List all available commands.                                                                                        |
+| python3 src/run_cluster.py -h                                                                                         |
+|_______________________________________________________________________________________________________________________|
+| * Make prediction with all input parameters in JSON file                                                              |
+| python3 src/run_cluster.py -j [input_json_file]                                                                       |
+| Example: python3 src/run_cluster.py -j examples/cluster.json                                                          |
+|_______________________________________________________________________________________________________________________|
+| * Make prediction with all input parameters in JSON file and write result to a JSON file                              |
+| python3 src/run_cluster.py -j [input_json_file] -o [output_prefix] -f json                                            |
+| Example: python3 src/run_cluster.py -j examples/cluster.json -o output -f json                                        |
+|_______________________________________________________________________________________________________________________|
+

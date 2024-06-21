@@ -1,0 +1,6 @@
+# Requirements for python 3.10 and up
+numpy==1.26.0
+pandas==2.2.2
+biopython==1.83
+networkx==3.3
+matplotlib==3.9.0

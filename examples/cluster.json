@@ -1,0 +1,9 @@
+{
+    "input_sequence_text": ">Mus Pep1\nLEQIHVLENSLVL\n>Mus Pep2\nFVEHIHVLENSLAFK\n>Mus Pep3\nGLYGREPDLSSDIKERFA\n>Mus Pep4\nEWFSILLASDKREKI",
+    "method": "cluster-break",
+    "cluster_pct_identity": 0.7,
+    "peptide_length_range": [
+        0,
+        0
+    ]
+}

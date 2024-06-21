@@ -1,0 +1,21 @@
+'''
+Unit tests for epitope_cluster_analysis
+'''
+import unittest
+from epitope_cluster_analysis.analysis import process
+
+class CLusterTests(unittest.TestCase):
+        
+    def test_basic(self):
+        file_name = 'tests/test.fas'
+
+
+        result = process(file_name)
+        expected_result = [[1, 'Consensus', 'TFQLMXLYGRXXDLSSDIKEKFAKLCEA', '-', '-', 1, '-'], [1, 1, 'TFQLMVLYGRTKDLSSDIKE--------', 1, 'TFQLMVLYGRTKDLSSDIKE', 1, ['Rat Pep17']], [1, 2, '-----GLYGREPDLSSDIKERFA-----', 6, 'GLYGREPDLSSDIKERFA', 1, ['Mus Pep3']], [1, 3, '-------YGREPDLSLDIKEK-------', 8, 'YGREPDLSLDIKEK', 1, ['Mus Pep7']], [1, 4, '--------GRTKDLSSDIKEKFAKLCEA', 9, 'GRTKDLSSDIKEKFAKLCEA', 1, ['Rat Pep9']], [2, 'Consensus', 'YDRYVMXHLINXKXGETFQLMXLYGRTK', '-', '-', 1, '-'], [2, 1, 'YDRYVMFHLINFKNGETFQL--------', 1, 'YDRYVMFHLINFKNGETFQL', 1, ['Rat Pep19']], [2, 2, '------AHLINEKDGETFQLM-------', 7, 'AHLINEKDGETFQLM', 1, ['Mus Pep9']], [2, 3, '--------LINFKNGETFQLMVLYGRTK', 9, 'LINFKNGETFQLMVLYGRTK', 1, ['Rat Pep12']], [2, 4, '----------NEKDGETFQLMGLY----', 11, 'NEKDGETFQLMGLY', 1, ['Mus Pep6']], [3, 'Consensus', 'FXXHIXVLENSLXFKFRIKE', '-', '-', 1, '-'], [3, 1, 'FMQHIDVLENSLGFKFRIKE', 1, 'FMQHIDVLENSLGFKFRIKE', 1, ['Rat Pep6']], [3, 2, 'FVEHIHVLENSLAFK-----', 1, 'FVEHIHVLENSLAFK', 1, ['Mus Pep2']], [4, 'Consensus', 'EENGSMRVFXXHIXVLENSL', '-', '-', 1, '-'], [4, 1, 'EENGSMRVFMQHIDVLENSL', 1, 'EENGSMRVFMQHIDVLENSL', 1, ['Rat Pep4']], [4, 2, '---GSMRVFVEHIHVLEN--', 4, 'GSMRVFVEHIHVLEN', 1, ['Mus Pep16']], [5, 'Consensus', 'EEASSTGRNFNVXKINGEWHTIIL', '-', '-', 1, '-'], [5, 1, 'EEASSTGRNFNVQKINGEWHTIIL', 1, 'EEASSTGRNFNVQKINGEWHTIIL', 1, ['Mus Pep10']], [5, 2, '----------NVEKINGEWHTIIL', 11, 'NVEKINGEWHTIIL', 1, ['Mus Pep13']], [6, 'Consensus', 'GXWFSIXXASXKREKIEENG', '-', '-', 1, '-'], [6, 1, 'GDWFSIVVASNKREKIEENG', 1, 'GDWFSIVVASNKREKIEENG', 1, ['Rat Pep8']], [6, 2, '-EWFSILLASDKREKI----', 2, 'EWFSILLASDKREKI', 1, ['Mus Pep4']], [7, 'Consensus', 'FVEYDGXNTFTILKTDYDXY', '-', '-', 1, '-'], [7, 1, 'FVEYDGGNTFTILKTDYDRY', 1, 'FVEYDGGNTFTILKTDYDRY', 1, ['Rat Pep7']], [7, 2, '----DGFNTFTILKTDYDN-', 5, 'DGFNTFTILKTDYDN', 1, ['Mus Pep5']], [8, 'Consensus', 'RXNIIDLTKTXRCLXARG', '-', '-', 1, '-'], [8, 1, 'RDNIIDLTKTDRCLQARG', 1, 'RDNIIDLTKTDRCLQARG', 1, ['Rat Pep14']], [8, 2, '-ENIIDLTKTNRCLKA--', 2, 'ENIIDLTKTNRCLKA', 1, ['Mus Pep17']], [9, 'Singleton', 'LEQIHVLENSLVL', '-', 'LEQIHVLENSLVL', 1, ['Mus Pep1']], [10, 'Singleton', 'LENSLVLKFHTVRDE', '-', 'LENSLVLKFHTVRDE', 1, ['Mus Pep8']], [11, 'Singleton', 'SRPFIFQEVIDLGGE', '-', 'SRPFIFQEVIDLGGE', 1, ['Mus Pep12']], [12, 'Singleton', 'EELRRLAPITSDPTE', '-', 'EELRRLAPITSDPTE', 1, ['Mus Pep22']], [13, 'Singleton', 'EEASSTRGNLDVAKLNGDWF', '-', 'EEASSTRGNLDVAKLNGDWF', 1, ['Rat Pep3']], [14, 'Singleton', 'ENSLGFKFRIKENGECRELY', '-', 'ENSLGFKFRIKENGECRELY', 1, ['Rat Pep5']], [15, 'Singleton', 'DIKEKFAKLCEAHGITRDNI', '-', 'DIKEKFAKLCEAHGITRDNI', 1, ['Rat Pep2']], [16, 'Singleton', 'NLDVAKLNGDWFSIVVASNK', '-', 'NLDVAKLNGDWFSIVVASNK', 1, ['Rat Pep13']], [17, 'Singleton', 'GIYYLNYDGFNTFTI', '-', 'GIYYLNYDGFNTFTI', 1, ['Mus Pep14']], [18, 'Singleton', 'KTPEDGEYFVEYDGGNTFTI', '-', 'KTPEDGEYFVEYDGGNTFTI', 1, ['Rat Pep10']], [19, 'Singleton', 'LCEAHGITRDNIIDLTKTDR', '-', 'LCEAHGITRDNIIDLTKTDR', 1, ['Rat Pep11']], [20, 'Singleton', 'TFTILKTDYDRYVMFHLINF', '-', 'TFTILKTDYDRYVMFHLINF', 1, ['Rat Pep18']], [21, 'Singleton', 'RELYLVAYKTPEDGEYFVEY', '-', 'RELYLVAYKTPEDGEYFVEY', 1, ['Rat Pep15']], [22, 'Singleton', 'RIKENGECRELYLVAYKTPE', '-', 'RIKENGECRELYLVAYKTPE', 1, ['Rat Pep16']], [23, 'Singleton', 'ASNKREKIEENGSMRVFMQH', '-', 'ASNKREKIEENGSMRVFMQH', 1, ['Rat Pep1']], [24, 'Singleton', 'EKALVSSVRQRMKCS', '-', 'EKALVSSVRQRMKCS', 1, ['Mus Pep11']], [25, 'Singleton', 'DDVVASEALNSVWSGF', '-', 'DDVVASEALNSVWSGF', 1, ['Mus Pep15']], [26, 'Singleton', 'ILGKLVKDYHLQFHR', '-', 'ILGKLVKDYHLQFHR', 1, ['Mus Pep18']], [27, 'Singleton', 'IGGPDDGVITPWQSSF', '-', 'IGGPDDGVITPWQSSF', 1, ['Mus Pep19']], [28, 'Singleton', 'DKETLSLEELKALLL', '-', 'DKETLSLEELKALLL', 1, ['Mus Pep20']], [29, 'Singleton', 'LQSGFYSLSSLVTVP', '-', 'LQSGFYSLSSLVTVP', 1, ['Mus Pep21']], [30, 'Singleton', 'TIFISLFLLSVCYSA', '-', 'TIFISLFLLSVCYSA', 1, ['Mus Pep23']]]
+
+        self.assertEqual(result['table_data'], expected_result)
+
+
+
+if __name__ == '__main__':
+    unittest.main()

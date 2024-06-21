@@ -1,0 +1,127 @@
+IEDB Next-Generation Tools Cluster Analysis - version 0.1 beta
+==============================================================
+
+Introduction
+------------
+This tool groups epitopes into clusters based on sequence identity. 
+A cluster is defined as a group of sequences which have a sequence similarity 
+greater than the minimum sequence identity threshold specified.  This
+standalone tool handles most of the data processing for the Cluster
+tool at https://nextgen-tools.iedb.org/pipeline?tool=cluster.
+
+The algorithm behind this tool is the same that drives the cluster 2.0
+tools at https://tools.iedb.org/cluster.
+
+
+Release Notes
+-------------
+v0.1 beta - Initial public beta release
+
+
+Prerequisites
+-------------
+The following prerequisites must be met before installing the tools:
+
++ Linux 64-bit environment
+  * http://www.ubuntu.com/
+    - This distribution has been tested on Linux/Ubuntu 64 bit system.
+
++ Python 3.8 or higher
+  * http://www.python.org/
+   - Depending upon the Python version you are using, one of several included
+     pip requirements files can be used.  See below for details.
+
++ ft2build.h
+  * This library is necessary for building matplotlib
+  To install this under ubuntu: sudo apt-get install libfontconfig1-dev
+
+
+Installation
+------------
+Below, we will use the example of installing to /opt/iedb_tools.
+
+1. Extract the code and change directory: 
+  $ mkdir /opt/iedb_tools
+  $ tar -xvzf IEDB_CLUSTER-VERSION.tar.gz -C /opt/iedb_tools
+  $ cd /opt/iedb_tools/cluster-VERSION
+
+2. Optionally, create and activate a Python 3.8+ virtual environment using your favorite virtual environment manager.  Here, we will assume the virtualenv is at ~/virtualenvs/cluster:
+  $ python3 -m venv ~/venvs/cluster
+  $ source ~/venvs/cluster/bin/activate
+
+3. Install python requirements.  Depending upon the version of python under which
+this will be installed, use one of the files in the 'requirements' directory.
+
+  For Python 3.10 or higher:
+
+    $ pip install -r requirements/requirements.txt
+
+  For Python 3.9:
+
+    $ pip install -r requirements/requirements-3.9.txt
+
+  For Python 3.8:
+
+    $ pip install -r requirements/requirements-3.8.txt
+
+
+
+Usage
+-----
+python3 run_cluster.py -j <input_json_file> [-o] <output_prefix> [-f] <output_format>
+
+The format of the input JSON file is described below.
+
+The output_prefix and output_format are optional.  By default, the output will
+be printed to the screen in TSV format.  Options are 'tsv' or 'json'.
+
+
+Input formats
+-------------
+Currently, only JSON input is supported.
+
+*NOTE*: This tool only accepts JSON inputs, formatted as described below
+
+{
+    "input_sequence_text": ">Mus Pep1\nLEQIHVLENSLVL\n>Mus Pep2\nFVEHIHVLENSLAFK\n>Mus Pep3\nGLYGREPDLSSDIKERFA\n>Mus Pep4\nEWFSILLASDKREKI",
+    "method": "cluster-break",
+    "cluster_pct_identity": 0.7,
+    "peptide_length_range": [
+        0,
+        0
+    ]
+}
+
+* input_sequence_text: a fasta-formatted string.  To create an appropriate string
+    from a fasta file:
+      awk '{printf "%s\\n", $0}' <fasta_file>
+* method: the cluster method to use.  Descriptions of each method can be found
+    at https://nextgen-tools.iedb.org/docs/tools/cluster.  Possible values are:
+      - cluster-break
+      - cluster
+      - cliques
+* cluster_pct_identity: The percent identity, expressed between 0 and 1, for members
+    of a cluster.
+* peptide_length_range: Minimum and maximum cutoffs for the lengths of peptides
+    to include in the clustering.  The default of [0,0] indicates that all peptide
+    lengths should be considered.
+
+
+Caveats
+-------
+All IEDB next-generation standalones have been developed with the primary
+focus of supporting the website.  Some user-facing features may be lacking,
+but will be improved as these tools mature.
+
+License
+-------
+This project is licensed under the Non-Profit Open Software License 3.0 (NPOSL-3.0). 
+You can find the full text of the license in the file `LICENSE-LJI.md`.
+
+Contact
+-------
+Please contact us with any issues encountered or questions about the software
+through any of the channels listed below.
+
+IEDB Help Desk: https://help.iedb.org/
+Email: help@iedb.org

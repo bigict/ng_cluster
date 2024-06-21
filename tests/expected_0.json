@@ -1,0 +1,88 @@
+{
+    "warnings": [],
+    "results": [
+      {
+        "type": "peptide_table",
+        "table_columns": [
+          "cluster.cluster_number",
+          "cluster.peptide_number",
+          "cluster.alignment",
+          "cluster.position",
+          "cluster.sequence_number",
+          "cluster.peptide",
+          "cluster.cluster_consensus"
+        ],
+        "table_data": [
+          [
+            "1.1",
+            "Singleton",
+            "LEQIHVLENSLVL",
+            "-",
+            "Mus Pep1",
+            "LEQIHVLENSLVL",
+            "LEQIHVLENSLVL"
+          ],
+          [
+            "2.1",
+            "Singleton",
+            "FVEHIHVLENSLAFK",
+            "-",
+            "Mus Pep2",
+            "FVEHIHVLENSLAFK",
+            "FVEHIHVLENSLAFK"
+          ],
+          [
+            "3.1",
+            "Singleton",
+            "GLYGREPDLSSDIKERFA",
+            "-",
+            "Mus Pep3",
+            "GLYGREPDLSSDIKERFA",
+            "GLYGREPDLSSDIKERFA"
+          ],
+          [
+            "4.1",
+            "Singleton",
+            "EWFSILLASDKREKI",
+            "-",
+            "Mus Pep4",
+            "EWFSILLASDKREKI",
+            "EWFSILLASDKREKI"
+          ]
+        ]
+      },
+      {
+        "type": "network_graph",
+        "graph_data": [
+          {
+            "source": "LEQIHVLENSLVL",
+            "target": "LEQIHVLENSLVL",
+            "cluster": [
+              "1_1"
+            ]
+          },
+          {
+            "source": "FVEHIHVLENSLAFK",
+            "target": "FVEHIHVLENSLAFK",
+            "cluster": [
+              "2_1"
+            ]
+          },
+          {
+            "source": "GLYGREPDLSSDIKERFA",
+            "target": "GLYGREPDLSSDIKERFA",
+            "cluster": [
+              "3_1"
+            ]
+          },
+          {
+            "source": "EWFSILLASDKREKI",
+            "target": "EWFSILLASDKREKI",
+            "cluster": [
+              "4_1"
+            ]
+          }
+        ]
+      }
+    ]
+  }

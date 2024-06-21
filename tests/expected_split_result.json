@@ -1,0 +1,22 @@
+[
+    {
+      "shell_cmd": "/src/cluster/src/cluster.py -j /src/cluster/tests/examples/job/parameter_units/0.json -o /src/cluster/tests/examples/job/results/0 -f json",
+      "job_id": 0,
+      "job_type": "prediction",
+      "depends_on_job_ids": [],
+      "expected_outputs": [
+        "/src/cluster/tests/examples/job/results/0.json"
+      ]
+    },
+    {
+      "shell_cmd": "/src/cluster/src/cluster.py --aggregate --job-desc-file=/src/cluster/tests/examples/job/job_descriptions.json --aggregate-input-dir=/src/cluster/tests/examples/job/results --aggregate-result-dir=/src/cluster/tests/examples/job/aggregate",
+      "job_id": 1,
+      "job_type": "aggregate",
+      "depends_on_job_ids": [
+        0
+      ],
+      "expected_outputs": [
+        "/src/cluster/tests/examples/job/aggregate/aggregated_result.json"
+      ]
+    }
+  ]
